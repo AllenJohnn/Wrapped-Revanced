@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wrapped Revanced 🎧</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    body {
+      background: linear-gradient(135deg, #121212, #000000);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px #1DB954;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #b3b3b3;
+      margin-bottom: 40px;
+    }
+
+    a {
+      background-color: #1DB954;
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(29, 185, 84, 0.3);
+    }
+
+    a:hover {
+      background-color: #1ed760;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(29, 185, 84, 0.6);
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 150px;
+      background: url('https://raw.githubusercontent.com/ahmadawais/Spotify-Github-Profile/master/assets/wave.svg') repeat-x;
+      background-size: 1000px 150px;
+      animation: wave 10s linear infinite;
+      opacity: 0.1;
+    }
+
+    @keyframes wave {
+      from { background-position-x: 0; }
+      to { background-position-x: 1000px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Wrapped Revanced 🎶</h1>
+  <p>Your personalized Spotify Wrapped experience.</p>
+  <a href="/login">Login with Spotify</a>
+
+  <div class="wave"></div>
+</body>
+</html>

@@ -1,62 +1,61 @@
-import os
-import pandas as pd
-import matplotlib.pyplot as plt
-import io
-import base64
-from flask import Flask, redirect, request
-from spotipy.oauth2 import SpotifyOAuth
+from flask import Flask, redirect, request, session, url_for, render_template
 import spotipy
+from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
+import os
 
-# Used To Load client ID/secret from .env file
-load_dotenv()  
+load_dotenv()
 
 app = Flask(__name__)
+app.secret_key = "randomsecretkey"
+app.config['SESSION_COOKIE_NAME'] = 'Spotify Cookie'
 
-sp_oauth = SpotifyOAuth(
-    client_id=os.getenv("0b5569103113480eacefe0bc16793cf0"),
-    client_secret=os.getenv("f95be492790748f4a5f71bc51f10cc5e"),
-    redirect_uri=os.getenv("http://127.0.0.1:5000/callback"),
-    scope="user-top-read user-read-recently-played"
-)
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/login')
+def login():
+    sp_oauth = SpotifyOAuth(
+        client_id=os.getenv('SPOTIPY_CLIENT_ID'),
+        client_secret=os.getenv('SPOTIPY_CLIENT_SECRET'),
+        redirect_uri=os.getenv('SPOTIPY_REDIRECT_URI'),
+        scope='user-top-read'
+    )
+    auth_url = sp_oauth.get_authorize_url()
+    return redirect(auth_url)
 
 @app.route('/callback')
 def callback():
+    sp_oauth = SpotifyOAuth(
+        client_id=os.getenv('SPOTIPY_CLIENT_ID'),
+        client_secret=os.getenv('SPOTIPY_CLIENT_SECRET'),
+        redirect_uri=os.getenv('SPOTIPY_REDIRECT_URI'),
+        scope='user-top-read'
+    )
     code = request.args.get('code')
     token_info = sp_oauth.get_access_token(code)
+    session['token_info'] = token_info
+    return redirect('/top-artists')
+
+@app.route('/top-artists')
+def top_artists():
+    token_info = session.get('token_info')
+    if not token_info:
+        return redirect('/login')
+        
     sp = spotipy.Spotify(auth=token_info['access_token'])
-
-    user = sp.current_user()
-    top_artists = sp.current_user_top_artists(limit=10, time_range='medium_term')['items']
-
-    # Prepare data for visualization
-    artist_names = [artist['name'] for artist in top_artists]
-    artist_popularity = [artist['popularity'] for artist in top_artists]
-
-    df = pd.DataFrame({
-        'Artist': artist_names,
-        'Popularity': artist_popularity
-    })
-
-    # Plot bar chart
-    plt.figure(figsize=(8,5))
-    plt.barh(df['Artist'], df['Popularity'], color='limegreen')
-    plt.xlabel('Popularity')
-    plt.ylabel('Artist')
-    plt.title(f"{user['display_name']}'s Top Artists (Medium Term)")
-    plt.gca().invert_yaxis()
-
-    # Convert plot to base64 image for display
-    buf = io.BytesIO()
-    plt.tight_layout()
-    plt.savefig(buf, format='png')
-    buf.seek(0)
-    img_base64 = base64.b64encode(buf.read()).decode('utf-8')
-    buf.close()
-
-    html = f"<h1>Welcome, {user['display_name']}!</h1>"
-    html += "<img src='data:image/png;base64,{}'>".format(img_base64)
-    return html
+    results = sp.current_user_top_artists(limit=10, time_range='short_term')
+    
+    artists = []
+    for artist in results['items']:
+        artists.append({
+            'name': artist['name'],
+            'image': artist['images'][0]['url'] if artist['images'] else None,
+            'url': artist['external_urls']['spotify']
+        })
+    
+    return render_template('top_artists.html', artists=artists)
 
 
 if __name__ == '__main__':
