@@ -45,5 +45,5 @@ It lets you securely log in with your Spotify account to view your **Top Artists
 
 1. **Clone this repository**
    ```bash
-   git clone https://github.com/<your-username>/Wrapped-Revanced.git
+   git clone https://github.com/<AllenJohnn>/Wrapped-Revanced.git
    cd Wrapped-Revanced
