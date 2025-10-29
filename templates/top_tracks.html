@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Top Tracks - Wrapped Revanced</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/top_tracks.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Your <span class="highlight">Top Tracks</span> This Year 🎧</h1>
+      <p class="subtext">You couldn’t stop vibing to these hits!</p>
+
+      <div class="tracks">
+        <div class="track-card">
+          <img src="{{ url_for('static', filename='images/track1.jpg') }}" alt="Track 1">
+          <div class="track-info">
+            <h2>Blinding Lights</h2>
+            <p>The Weeknd</p>
+          </div>
+        </div>
+
+        <div class="track-card">
+          <img src="{{ url_for('static', filename='images/track2.jpg') }}" alt="Track 2">
+          <div class="track-info">
+            <h2>Meltdown</h2>
+            <p>Travis Scott ft. Drake</p>
+          </div>
+        </div>
+
+        <div class="track-card">
+          <img src="{{ url_for('static', filename='images/track3.jpg') }}" alt="Track 3">
+          <div class="track-info">
+            <h2>Dance The Night</h2>
+            <p>Dua Lipa</p>
+          </div>
+        </div>
+
+        <div class="track-card">
+          <img src="{{ url_for('static', filename='images/track4.jpg') }}" alt="Track 4">
+          <div class="track-info">
+            <h2>HUMBLE.</h2>
+            <p>Kendrick Lamar</p>
+          </div>
+        </div>
+
+        <div class="track-card">
+          <img src="{{ url_for('static', filename='images/track5.jpg') }}" alt="Track 5">
+          <div class="track-info">
+            <h2>God’s Plan</h2>
+            <p>Drake</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="/summary" class="next-btn">Next →</a>
+    </div>
+  </div>
+</body>
+</html>
