@@ -1,46 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Top Artists - Wrapped Revanced</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/top_artists.css') }}">
-</head>
-<body>
-  <div class="wrapper">
-    <div class="slide">
-      <h1>Your Top Artists of 2025 🎧</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Top Artists - Wrapped Revanced</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/top_artists.css') }}"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="slide">
+        <h1>Your Top Artists of 2025 🎧</h1>
 
-      <div class="artist-list">
-        <div class="artist-card">
-          <img src="{{ url_for('static', filename='images/artist1.jpg') }}" alt="Artist 1">
-          <h2>Travis Scott</h2>
-          <p>#1</p>
+        <div class="artist-list">
+          <div class="artist-card">
+            <img
+              src="{{ url_for('static', filename='images/artist1.jpg') }}"
+              alt="Artist 1"
+            />
+            <h2>Travis Scott</h2>
+            <p>#1</p>
+          </div>
+          <div class="artist-card">
+            <img
+              src="{{ url_for('static', filename='images/artist2.jpg') }}"
+              alt="Artist 2"
+            />
+            <h2>The Weeknd</h2>
+            <p>#2</p>
+          </div>
+          <div class="artist-card">
+            <img
+              src="{{ url_for('static', filename='images/artist3.jpg') }}"
+              alt="Artist 3"
+            />
+            <h2>Drake</h2>
+            <p>#3</p>
+          </div>
+          <div class="artist-card">
+            <img
+              src="{{ url_for('static', filename='images/artist4.jpg') }}"
+              alt="Artist 4"
+            />
+            <h2>Dua Lipa</h2>
+            <p>#4</p>
+          </div>
+          <div class="artist-card">
+            <img
+              src="{{ url_for('static', filename='images/artist5.jpg') }}"
+              alt="Artist 5"
+            />
+            <h2>Kendrick Lamar</h2>
+            <p>#5</p>
+          </div>
         </div>
-        <div class="artist-card">
-          <img src="{{ url_for('static', filename='images/artist2.jpg') }}" alt="Artist 2">
-          <h2>The Weeknd</h2>
-          <p>#2</p>
-        </div>
-        <div class="artist-card">
-          <img src="{{ url_for('static', filename='images/artist3.jpg') }}" alt="Artist 3">
-          <h2>Drake</h2>
-          <p>#3</p>
-        </div>
-        <div class="artist-card">
-          <img src="{{ url_for('static', filename='images/artist4.jpg') }}" alt="Artist 4">
-          <h2>Dua Lipa</h2>
-          <p>#4</p>
-        </div>
-        <div class="artist-card">
-          <img src="{{ url_for('static', filename='images/artist5.jpg') }}" alt="Artist 5">
-          <h2>Kendrick Lamar</h2>
-          <p>#5</p>
-        </div>
+
+        <a href="/top_tracks" class="next-btn">Next →</a>
       </div>
-
-      <a href="/top_tracks" class="next-btn">Next →</a>
     </div>
-  </div>
-</body>
+  </body>
 </html>

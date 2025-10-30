@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Your Wrapped</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body class="wrapped">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body class="wrapped">
     <div class="slide">
-        <h2>You've listened for <span class="highlight">{{ hours }}</span> hours this month ⏱</h2>
+      <h2>
+        You've listened for <span class="highlight">{{ hours }}</span> hours
+        this month ⏱
+      </h2>
     </div>
 
     <div class="slide">
-        <h2>Your top artist is <span class="highlight">{{ artist }}</span> 🎤</h2>
+      <h2>Your top artist is <span class="highlight">{{ artist }}</span> 🎤</h2>
     </div>
 
     <div class="slide">
-        <h2>Your favorite track was <span class="highlight">“{{ track }}”</span> 🎶</h2>
+      <h2>
+        Your favorite track was <span class="highlight">“{{ track }}”</span> 🎶
+      </h2>
     </div>
 
     <div class="slide">
-        <h2>You really vibed with <span class="highlight">{{ genre }}</span> music this month 💚</h2>
+      <h2>
+        You really vibed with <span class="highlight">{{ genre }}</span> music
+        this month 💚
+      </h2>
     </div>
 
     <div class="slide">
-        <h2>Thanks for listening with <span class="highlight">Wrapped Revanced</span> 🎧</h2>
+      <h2>
+        Thanks for listening with
+        <span class="highlight">Wrapped Revanced</span> 🎧
+      </h2>
     </div>
-</body>
+  </body>
 </html>
