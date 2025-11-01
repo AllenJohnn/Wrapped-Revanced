@@ -5,7 +5,7 @@ function Navbar({ onLogin, onLogout, profile }) {
   return (
     <header className="nav">
       <div className="nav-left">
-        <h2 className="brand">MED-Wrapped</h2>
+        <h2 className="brand">Spotify-Wrapped</h2>
         {profile && (
           <nav className="nav-links">
             <a href="#artists">Artists</a>
@@ -104,7 +104,7 @@ export default function App() {
 
       {!token ? (
         <div className="main">
-          <h1>Welcome to MED-Wrapped</h1>
+          <h1>Welcome to Spotify-Wrapped</h1>
           <p className="muted">Login with Spotify to see your personalized wrap</p>
         </div>
       ) : (
