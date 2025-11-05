@@ -4,7 +4,6 @@
 
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
   <img src="https://img.shields.io/badge/Spotify_API-1DB954?style=for-the-badge&logo=spotify&logoColor=white"/>
   <img src="https://img.shields.io/badge/Spotipy-111111?style=for-the-badge&logo=spotify&logoColor=1DB954"/>
