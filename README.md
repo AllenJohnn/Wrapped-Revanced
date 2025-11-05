@@ -1,4 +1,7 @@
-<h1 align="center">🎧 Wrapped Revanced</h1>
+<p align="center">
+  <img src="banner.png" width="65%" style="border-radius: 12px;" />
+</p>
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
