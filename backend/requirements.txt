@@ -1,0 +1,7 @@
+Flask
+flask-cors
+spotipy  # if you are using Spotify APIs
+python-dotenv
+spotipy
+flask-cors
+python-dotenv
