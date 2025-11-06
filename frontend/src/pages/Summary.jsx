@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import html2canvas from "html2canvas";
+import { useNavigate } from "react-router-dom";
 import StoryScreen from "../components/StoryScreen";
 
 export default function Summary() {
+  const navigate = useNavigate();
   const token = localStorage.getItem("spotify_token");
   const [topTrack, setTopTrack] = useState(null);
   const [topArtist, setTopArtist] = useState(null);
@@ -31,6 +33,11 @@ export default function Summary() {
       link.href = canvas.toDataURL();
       link.click();
     });
+  };
+
+  const logout = () => {
+    localStorage.removeItem("spotify_token");
+    navigate("/"); // go back to Welcome
   };
 
   return (
@@ -119,6 +126,24 @@ export default function Summary() {
           }}
         >
           Save as Image 🖼️
+        </button>
+
+        {/* LOGOUT BUTTON */}
+        <button
+          onClick={logout}
+          style={{
+            marginTop: "20px",
+            background: "transparent",
+            border: "1px solid #1DB954",
+            padding: "12px 28px",
+            borderRadius: "24px",
+            color: "#1DB954",
+            fontWeight: 600,
+            fontSize: "1rem",
+            cursor: "pointer"
+          }}
+        >
+          Logout 🚪
         </button>
       </div>
     </StoryScreen>
