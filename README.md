@@ -1,49 +1,52 @@
-<h1 align="center">🎧 Wrapped Revanced</h1>
 <p align="center">
-  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
+  <img src="banner.png" width="65%" style="border-radius: 12px;" />
+</p>
+
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
   <img src="https://img.shields.io/badge/Spotify_API-1DB954?style=for-the-badge&logo=spotify&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Spotipy-0A0A0A?style=for-the-badge&logo=spotify&logoColor=1DB954"/>
+  <img src="https://img.shields.io/badge/Spotipy-111111?style=for-the-badge&logo=spotify&logoColor=1DB954"/>
 </p>
 
 <p align="center">
-  <b>Experience your personalized Spotify Wrapped anytime 🎵</b><br>
-  <i>Built with Flask, Spotipy, and a love for music.</i>
+  <b>Your Spotify listening story, anytime — with a clean Capsule-inspired UI.</b><br>
+  <i>Built with React, Flask, and the Spotify Web API.</i>
 </p>
 
 ---
 
-##  Overview
+## 🎵 Overview
 
-**Wrapped Revanced** is a Flask web app that brings the fun of **Spotify Wrapped** anytime you want!  
-It lets you securely log in with your Spotify account to view your **Top Artists**, **Top Tracks**, and **Total Listening Hours**, beautifully displayed in a Spotify-like theme.
+**Wrapped Revanced** recreates the magic of **Spotify Wrapped**, but lets you view it **whenever you want.**  
+It shows your Spotify **Top Tracks**, **Top Artists**, and generates a **share-ready summary card**, wrapped in a modern **Spotify Black UI**.
+
+This version uses:
+- **React + Vite** for a smooth frontend experience
+- **Flask** backend with **Spotipy** for secure Spotify API access
 
 ---
 
 ## ✨ Features
 
--  **Spotify OAuth Login**
--  **Top Artists** display
--  **Top Tracks** listing
--  **Listening Hours** estimation
--  Clean & modern **Spotify-themed UI**
+| Feature | Description |
+|--------|-------------|
+| 🔐 **Spotify Login** | Authenticates securely with Spotify OAuth |
+| 🎶 **Top Tracks** | Ranked list with album art & artist names |
+| 👤 **Top Artists** | Circular artist layout, Spotify style |
+| 🟢 **Spotify Black UI** | Inspired by Sound Capsule aesthetics |
+| 🖼 **Shareable Summary Card** | Save as image, perfect for stories |
+| ⚡ Fast & Modern | Built using Vite + React + Framer Motion |
 
 ---
 
-##  Tech Stack
+## 🛠 Tech Stack
 
-| Component | Description |
-|------------|--------------|
-| **Flask** | Python web framework |
-| **Spotipy** | Spotify Web API wrapper |
-| **HTML / CSS / JS** | Front-end design |
-| **dotenv** | Secure environment variables |
+| Layer | Tools |
+|------|------|
+| Frontend | React, Vite, Framer Motion |
+| Backend | Flask, Python, Spotipy |
+| Auth | Spotify OAuth 2.0 |
+| Styling | Custom Spotify UI Theme |
 
 ---
-
-##  Setup & Installation
-
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/<AllenJohnn>/Wrapped-Revanced.git
-   cd Wrapped-Revanced
