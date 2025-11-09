@@ -15,7 +15,7 @@ export default function App() {
     if (accessToken) {
       localStorage.setItem("spotify_token", accessToken);
       setToken(accessToken);
-      window.history.replaceState({}, document.title, "/"); // clean URL
+      window.history.replaceState({}, document.title, "/"); 
     } else {
       const savedToken = localStorage.getItem("spotify_token");
       setToken(savedToken && savedToken !== "undefined" ? savedToken : null);
