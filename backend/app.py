@@ -27,19 +27,16 @@ def home():
 
 @app.route('/api/login')
 def login():
-    # Redirect user to Spotify's login page
     auth_url = sp_oauth.get_authorize_url()
     return redirect(auth_url)
 
 
 @app.route('/callback')
 def callback():
-    # Receive authorization code from Spotify
     code = request.args.get('code')
     token_info = sp_oauth.get_access_token(code)
     access_token = token_info['access_token']
 
-    # Redirect back to frontend WITH token
     return redirect(f"http://127.0.0.1:5173?token={access_token}")
 
 
