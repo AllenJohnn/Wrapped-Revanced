@@ -27,20 +27,20 @@ This version uses:
 
 ---
 
-## ✨ Features
+##  Features
 
 | Feature | Description |
 |--------|-------------|
-| 🔐 **Spotify Login** | Authenticates securely with Spotify OAuth |
-| 🎶 **Top Tracks** | Ranked list with album art & artist names |
-| 👤 **Top Artists** | Circular artist layout, Spotify style |
-| 🟢 **Spotify Black UI** | Inspired by Sound Capsule aesthetics |
-| 🖼 **Shareable Summary Card** | Save as image, perfect for stories |
-| ⚡ Fast & Modern | Built using Vite + React + Framer Motion |
+|  **Spotify Login** | Authenticates securely with Spotify OAuth |
+|  **Top Tracks** | Ranked list with album art & artist names |
+|  **Top Artists** | Circular artist layout, Spotify style |
+|  **Spotify Black UI** | Inspired by Sound Capsule aesthetics |
+|  **Shareable Summary Card** | Save as image, perfect for stories |
+|  Fast & Modern | Built using Vite + React + Framer Motion |
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 | Layer | Tools |
 |------|------|
