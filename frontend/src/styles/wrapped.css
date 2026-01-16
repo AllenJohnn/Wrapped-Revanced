@@ -10,22 +10,18 @@
   font-weight: 500;
 }
 
-
-
 :root {
   --wrapped-purple: #8A3FFC;
   --wrapped-pink: #FF6FE8;
   --wrapped-yellow: #FEEF5B;
   --wrapped-green: #17E58A;
   --wrapped-black: #0B0B0B;
-
   --radius: 18px;
 }
 
-
 body {
   margin: 0;
- background: #0b0a14;
+  background: #0b0a14;
   color: white;
   font-family: "WrappedDisplay", sans-serif;
 }
@@ -37,8 +33,6 @@ h1 {
   letter-spacing: -1.5px;
 }
 
-
-
 h2, h3 {
   font-weight: 700;
   letter-spacing: -1.5px;
@@ -46,18 +40,4 @@ h2, h3 {
 }
 
 
-button {
-  background: linear-gradient(135deg, #17e58a, #00c96b);
-  border-radius: var(--radius);
-  color: black;
-  font-weight: bold;
-  padding: 14px 28px;
-  box-shadow: 0 0 14px rgba(23, 229, 138, 0.6);
-  transition: 0.2s;
-}
-
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 22px rgba(23, 229, 138, 0.9);
-}
 

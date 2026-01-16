@@ -1,32 +1,119 @@
-<p align="center">
-  <img src="banner.png" width="65%" style="border-radius: 12px;" />
-</p>
-
+# Wrapped Revanced
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Spotify_API-1DB954?style=for-the-badge&logo=spotify&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Spotipy-111111?style=for-the-badge&logo=spotify&logoColor=1DB954"/>
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Spotify-1DB954?style=flat-square&logo=spotify&logoColor=white"/>
 </p>
 
 <p align="center">
-  <b>Your Spotify listening story, anytime — with a clean Capsule-inspired UI.</b><br>
-  <i>Built with React, Flask, and the Spotify Web API.</i>
+  View your Spotify Wrapped anytime with a minimalist black and white interface.
 </p>
+
+## Overview
+
+A recreated Spotify Wrapped experience that you can access whenever you want. View your top tracks, artists, and listening statistics with a clean, modern interface.
+
+**Stack:** React, Vite, Flask, Spotipy
+
+## Features
+
+- Secure Spotify OAuth authentication
+- Top tracks with album art preview on hover
+- Top artists with genre tags
+- Time range selection (4 weeks, 6 months, all time)
+- Shareable summary cards
+
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.13+
+- Node.js 18+
+- Spotify Developer Account
+
+### Spotify API Setup
+
+1. Visit [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
+2. Create a new application
+3. Add redirect URI: `http://localhost:5000/callback`
+4. Save your Client ID and Client Secret
+
+### Installation
+
+**Backend**
+
+```bash
+cd backend
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+Create `.env` file:
+
+```env
+SPOTIFY_CLIENT_ID=your_client_id
+SPOTIFY_CLIENT_SECRET=your_client_secret
+SPOTIFY_REDIRECT_URI=http://localhost:5000/callback
+FRONTEND_URL=http://localhost:5173
+SECRET_KEY=your_random_secret_key
+```
+
+**Frontend**
+
+```bash
+cd frontend
+npm install
+```
+
+### Run
+
+Start both servers in separate terminals:
+
+```bash
+# Terminal 1 - Backend
+cd backend
+.venv\Scripts\activate
+python app.py
+```
+
+```bash
+# Terminal 2 - Frontend
+cd frontend
+npm run dev
+```
+
+Access at `http://localhost:5173`
+
+## Tech Stack
+
+**Frontend**
+- React 19
+- Vite 6
+- Framer Motion
+- TanStack Query
+- Zustand
+- TailwindCSS
+
+**Backend**
+- Flask 3
+- Python 3.13
+- Spotipy 2.24
+
+
+## Author
+
+**Allen John**
+- Portfolio: [allenjohn-portfolio.vercel.app](https://allenjohn-portfolio.vercel.app)
+- GitHub: [@AllenJohnn](https://github.com/AllenJohnn)
+- LinkedIn: [Allen John Joy](https://www.linkedin.com/in/allenjohnjoy/)
 
 ---
 
-## 🎵 Overview
-
-**Wrapped Revanced** recreates the magic of **Spotify Wrapped**, but lets you view it **whenever you want.**  
-It shows your Spotify **Top Tracks**, **Top Artists**, and generates a **share-ready summary card**, wrapped in a modern **Spotify Black UI**.
-
-This version uses:
-- **React + Vite** for a smooth frontend experience
-- **Flask** backend with **Spotipy** for secure Spotify API access
-
----
-
+<<<<<<< HEAD
 ##  Features
 
 | Feature | Description |
@@ -50,3 +137,6 @@ This version uses:
 | Styling | Custom Spotify UI Theme |
 
 ---
+=======
+<p align="center">2026 • Allen John</p>
+>>>>>>> cfdb5eb (latest fixxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
