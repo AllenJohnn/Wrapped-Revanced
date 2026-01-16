@@ -1,5 +1,4 @@
 from flask import Flask, redirect, request, jsonify, session
-from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from spotipy import Spotify
@@ -17,19 +16,27 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
+# Manual CORS handling FIRST - before any middleware
+@app.after_request
+def after_request(response):
+    origin = request.headers.get('Origin')
+    logger.info(f"CORS: Origin={origin}, URL={request.url}")
+    if origin in ['http://localhost:5173', 'http://127.0.0.1:5173']:
+        response.headers['Access-Control-Allow-Origin'] = origin
+        response.headers['Access-Control-Allow-Credentials'] = 'true'
+        response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS, PUT, DELETE'
+        response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, X-Requested-With'
+        logger.info(f"CORS: Set headers for origin {origin}")
+    else:
+        logger.warning(f"CORS: Origin {origin} not allowed")
+    return response
+
 limiter = Limiter(
     app=app,
     key_func=get_remote_address,
     default_limits=["200 per hour", "50 per minute"],
     storage_uri="memory://"
 )
-
-allowed_origins = os.getenv("FRONTEND_URL", "http://localhost:5173").split(",")
-CORS(app, 
-     origins=allowed_origins,
-     supports_credentials=True,
-     allow_headers=["Content-Type", "Authorization"],
-     methods=["GET", "POST", "OPTIONS"])
 
 app.secret_key = os.getenv("SECRET_KEY", os.urandom(24))
 app.config['SESSION_COOKIE_SECURE'] = False
