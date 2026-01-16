@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="spotify.png" alt="Wrapped Revanced Banner" width="100%"/>
+</p>
+
 # Wrapped Revanced
 
 <p align="center">
@@ -139,4 +143,4 @@ Access at `http://localhost:5173`
 ---
 =======
 <p align="center">2026 • Allen John</p>
->>>>>>> cfdb5eb (latest fixxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
+
