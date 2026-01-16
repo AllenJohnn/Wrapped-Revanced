@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="spotify.png" alt="Wrapped Revanced Banner" width="100%"/>
+<img src="spotify.png" alt="Wrapped Revanced Banner" width="500"/>
 </p>
 
 # Wrapped Revanced
