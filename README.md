@@ -117,7 +117,6 @@ Access at `http://localhost:5173`
 
 ---
 
-<<<<<<< HEAD
 ##  Features
 
 | Feature | Description |
@@ -141,6 +140,5 @@ Access at `http://localhost:5173`
 | Styling | Custom Spotify UI Theme |
 
 ---
-=======
 <p align="center">2026 • Allen John</p>
 
