@@ -30,14 +30,10 @@ export default function App() {
 
     if (accessToken) {
       setToken(accessToken);
-<<<<<<< HEAD
-      window.history.replaceState({}, document.title, "/"); 
+      window.history.replaceState({}, document.title, "/");
     } else {
       const savedToken = localStorage.getItem("spotify_token");
       setToken(savedToken && savedToken !== "undefined" ? savedToken : null);
-=======
-      window.history.replaceState({}, document.title, "/");
->>>>>>> cfdb5eb (latest fixxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
     }
   }, [setToken]);
 

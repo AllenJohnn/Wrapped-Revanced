@@ -70,35 +70,25 @@ def home():
 @app.route('/api/login')
 @limiter.limit("10 per minute")
 def login():
-<<<<<<< HEAD
-    auth_url = sp_oauth.get_authorize_url()
-    return redirect(auth_url)
-=======
     try:
         auth_url = sp_oauth.get_authorize_url()
         return redirect(auth_url)
     except Exception as e:
         logger.error(f"Login error: {e}")
         return jsonify({"error": "Failed to initiate login"}), 500
->>>>>>> cfdb5eb (latest fixxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 
 @app.route('/callback')
 @limiter.limit("10 per minute")
 def callback():
-<<<<<<< HEAD
-    code = request.args.get('code')
-    token_info = sp_oauth.get_access_token(code)
-    access_token = token_info['access_token']
-
-    return redirect(f"http://127.0.0.1:5173?token={access_token}")
-=======
     try:
         code = request.args.get('code')
         error = request.args.get('error')
         
+        # Get first frontend URL for redirects
+        frontend_url = os.getenv("FRONTEND_URL", "http://127.0.0.1:5173").split(",")[0]
+        
         if error:
-            frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
             return redirect(f"{frontend_url}?error={error}")
         
         if not code:
@@ -112,11 +102,10 @@ def callback():
         session['refresh_token'] = refresh_token
         session.permanent = True
         
-        frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
         return redirect(f"{frontend_url}?token={access_token}")
     except Exception as e:
         logger.error(f"Callback error: {e}")
-        frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
+        frontend_url = os.getenv("FRONTEND_URL", "http://127.0.0.1:5173").split(",")[0]
         return redirect(f"{frontend_url}?error=auth_failed")
 
 
@@ -128,8 +117,6 @@ def get_spotify_client(token):
     except Exception as e:
         logger.error(f"Spotify client creation error: {e}")
         return None
->>>>>>> cfdb5eb (latest fixxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
-
 
 @app.route('/api/top-tracks')
 def top_tracks():
