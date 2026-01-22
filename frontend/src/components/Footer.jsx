@@ -23,7 +23,7 @@ export default function Footer() {
           </a>
           
           <a
-            href="https://allenjohn-portfolio.vercel.app/"
+            href="https://allenjohnn.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-500 hover:text-gray-300 transition-colors"
